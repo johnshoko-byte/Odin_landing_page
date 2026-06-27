@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Petpal</title>
+    <link rel="icon" type="img/logo.png" href="img/logo.png">
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -34,21 +35,34 @@
     <div class="card-heading">Why pet owners love Petpal?</div>
 
     <div class="cards">
-        <div class="card">
+        <!-- cards -->
+        <div class="card" onclick="openModal('walking')">
             <img src="img/dog-walking.png" alt="Dog Walking">
-            <p>Professional dog walkers to keep your furry friend happy and healthy</p>
+            <p>Professional dog walkers to keep your furry friend happy and healthy.</p>
         </div>
-        <div class="card">
-            <img src="img/calendar.png" alt="Calender">
-            <p>Book same-day or schedule weeks in advance</p>
+
+        <div class="card" onclick="openModal('calendar')">
+            <img src="img/calendar.png" alt="Calendar">
+            <p>Book same-day or schedule weeks in advance.</p>
         </div>
-        <div class="card">
+
+        <div class="card" onclick="openModal('map')">
             <img src="img/map.png" alt="map">
-            <p>Find carers within walking distance of your home</p>
+            <p>Find carers within walking distance of your home.</p>
         </div>
-        <div class="card">
+
+        <div class="card" onclick="openModal('rate')">
             <img src="img/rate.png" alt="rate">
-            <p>Real reviews from real pet owners in your area</p>
+            <p>Real reviews from real pet owners in your area.</p>
+        </div>
+
+        <!-- modal — place just before closing </body> tag -->
+        <div class="modal-overlay" id="modal" onclick="closeModal()">
+            <div class="modal-card" onclick="event.stopPropagation()">
+                <img id="modal-img" src="" alt="">
+                <h2 id="modal-title"></h2>
+                <p id="modal-text"></p>
+            </div>
         </div>
     </div>
     <div class="stats-section">
@@ -81,6 +95,7 @@
     <footer>
         <p>Copyright © PetPal 2025</p>
     </footer>
+    <script src="script.js"></script>
 </body>
 
 </html>
