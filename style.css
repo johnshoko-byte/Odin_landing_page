@@ -230,10 +230,11 @@ button:hover {
 .stats-section {
     display: flex;
     justify-content: center;
-    gap: 80px;
-    padding: 70px 120px;
+    gap: clamp(20px, 5vw, 80px);
+    padding: clamp(30px, 5vw, 70px) clamp(20px, 8vw, 120px);
     background-color: #1E2A3A;
-    /* dark navy for contrast */
+    overflow-x: auto;
+    flex-wrap: nowrap;
 }
 
 .stat {
@@ -242,14 +243,14 @@ button:hover {
 }
 
 .stat h2 {
-    font-size: 28px;
+    font-size: clamp(16px, 3vw, 28px);
     font-weight: 700;
     color: #F97316;
     /* orange numbers pop */
 }
 
 .stat p {
-    font-size: 14px;
+    font-size: clamp(10px, 1vw, 14px);
     color: #6B7280;
     margin-top: 6px;
     letter-spacing: 1px;
@@ -300,7 +301,10 @@ footer {
 /* ── TABLET (max 768px) ── */
 @media (max-width: 768px) {
 
-    /* hero text */
+    .logo {
+        margin-left: -20px;
+    }
+
     .content {
         padding: 20px 30px;
         height: auto;
@@ -309,10 +313,8 @@ footer {
 
     .description {
         width: 100%;
-        /* full width instead of 50% */
     }
 
-    /* cards stack into 2 columns */
     .cards {
         flex-wrap: wrap;
         padding: 10px 30px;
@@ -320,24 +322,20 @@ footer {
 
     .card {
         max-width: 45%;
-        /* 2 cards per row */
     }
 
     /* stats stack */
     .stats-section {
-        flex-wrap: wrap;
         gap: 40px;
         padding: 50px 40px;
     }
 
-    /* contact section */
     .contact-section {
         padding: 40px 40px;
     }
 
     .contact {
         flex-direction: column;
-        /* stack text and button */
         text-align: center;
         gap: 20px;
     }
@@ -346,26 +344,26 @@ footer {
 /* ── MOBILE (max 480px) ── */
 @media (max-width: 480px) {
 
-    /* header */
     .header {
         flex-direction: column;
-        /* stack logo and nav */
         align-items: flex-start;
         gap: 10px;
         padding: 20px;
     }
 
-    /* logo */
+    .logo {
+        margin-left: 0px;
+    }
+
     .logo img {
         width: 50px;
         height: 50px;
     }
 
-    /* nav links */
     ul {
         flex-wrap: wrap;
         gap: 8px;
-        padding-left: 0;
+        padding-left: 10px;
     }
 
     a {
@@ -373,23 +371,25 @@ footer {
         margin-right: 12px;
     }
 
-    /* hero */
     .content h2 {
         font-size: 22px;
     }
 
-    /* cards stack into 1 column */
     .card {
         max-width: 100%;
         width: 100%;
     }
 
-    /* stats 2 per row */
-    .stat {
-        width: 45%;
+    .stats-section {
+        gap: 40px;
+        padding: 50px 40px;
     }
 
-    /* contact */
+    .stat {
+        width: 45%;
+
+    }
+
     .contact-section {
         padding: 30px 20px;
     }
@@ -398,7 +398,6 @@ footer {
         font-size: 16px;
     }
 
-    /* modal */
     .modal-card {
         padding: 24px;
     }
